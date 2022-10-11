@@ -1,2 +1,3 @@
-# spotme
-spot me repo
+# spotme 
+
+This is the spot me repository
