@@ -1,8 +1,8 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import {  SafeAreaView, View, FlatList, StyleSheet, Text, Image, Dimensions } from 'react-native';
-import PostHeader from '../components/PostHeader';
 import Header from '../components/Header';
+import Post from '../components/Post';
 
 const DATA = [
     {
@@ -27,20 +27,6 @@ const DATA = [
 
 // const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height - 50;
-
-const Post = ({ image, profilePic, name}) => (
-  <View style={styles.post}>
-    <View style={styles.top}>
-      <PostHeader image={profilePic} name={name}/>
-    </View>
-    <View style={styles.imageView}>
-      <Image source={image} style={styles.image}/>
-    </View>
-    <View style={styles.comments}>
-      <Text>Comments</Text>
-    </View>
-  </View>
-);
 
 const Feed = () => {
     const renderItem = ({ item }) => (
@@ -69,31 +55,6 @@ const styles = StyleSheet.create({
       marginTop: StatusBar.currentHeight || 0,
       padding:20
     },
-    post: {
-      flex:1
-    },
-    top: {
-      paddingTop:20,
-      paddingBottom:5,
-      paddingLeft:20
-    },
-    imageView: {
-      padding:10,
-      justifyContent: 'center'
-    },
-    comments: {
-      padding:90,
-      alignItems: 'center'
-    },
-    title: {
-      fontSize: 22,
-    },
-    image: {
-      width: 375,
-      height: 475,
-      alignSelf: 'center',
-      resizeMode: 'cover'
-    }
   });
 
 export default Feed;
