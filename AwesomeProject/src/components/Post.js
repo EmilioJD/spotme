@@ -10,9 +10,9 @@ const Post = ({ image, profilePic, name}) => (
       <View style={styles.imageView}>
         <Image source={image} style={styles.image}/>
       </View>
-      <ScrollView style={styles.comments}>
+      <View style={styles.comments}>
         <Text>Comments</Text>
-      </ScrollView>
+      </View>
     </View>
   );
 
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     },
     top: {
       paddingTop:15,
-      paddingBottom:10,
+      paddingBottom:5,
       paddingLeft:20
     },
     imageView: {
@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
       justifyContent: 'center'
     },
     comments: {
-      paddingTop: 110,
-      paddingBottom: 135,
+      paddingTop:110,
+      paddingBottom:135
     //   alignItems: 'center'
     },
     image: {

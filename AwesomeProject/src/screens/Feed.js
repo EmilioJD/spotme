@@ -28,14 +28,14 @@ const DATA = [
 // const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height - 50;
 
-const Feed = () => {
+const Feed = ({navigation}) => {
     const renderItem = ({ item }) => (
       <Post image={item.image} profilePic={item.profilePic} name={item.username}/>
       );
     
     return (
       <SafeAreaView style={styles.container}>
-        <Header/>
+        {/* <Header/> */}
         <FlatList
           data={DATA}
           renderItem={renderItem}
