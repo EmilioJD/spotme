@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { View, StyleSheet, Text, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createlBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Feed from './src/screens/Feed'
 import MyProfile from './src/screens/MyProfile'
 import Header from './src/components/Header';
@@ -12,7 +12,7 @@ import MyTeams from './src/screens/MyTeams'
 // TODO: set up navigation once we have multiple screens
 
 const Stack = createNativeStackNavigator();
-const Tab = createMaterialTopTabNavigator();
+const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
   return(

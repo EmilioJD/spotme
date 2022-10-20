@@ -21,22 +21,22 @@ const styles = StyleSheet.create({
       flex:1
     },
     top: {
-      paddingTop:15,
-      paddingBottom:5,
-      paddingLeft:20
+      paddingTop: 10,
+      paddingLeft: 20
     },
     imageView: {
-      padding:10,
+      padding: 10,
       justifyContent: 'center'
     },
     comments: {
-      paddingTop:110,
-      paddingBottom:135
+      padding: 100,
+      borderBottomColor: '#808080',
+      borderBottomWidth: 0.2
     //   alignItems: 'center'
     },
     image: {
       width: 375,
-      height: 425,
+      height: 400,
       alignSelf: 'center',
       resizeMode: 'cover'
     }

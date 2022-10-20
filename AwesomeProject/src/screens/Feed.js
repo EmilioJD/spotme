@@ -40,9 +40,7 @@ const Feed = ({navigation}) => {
           data={DATA}
           renderItem={renderItem}
           keyExtractor={item => item.id}
-          snapToAlignment='center'
           snapToInterval={windowHeight}
-          decelerationRate="fast"
           showsVerticalScrollIndicator={false}
         />
       </SafeAreaView>
