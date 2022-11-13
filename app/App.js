@@ -1,5 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import {  SafeAreaView, View, FlatList, StyleSheet, Text, Dimensions } from 'react-native';
+// import { DataStore } from '@aws-amplify/datastore';
+// import { Users } from './models';
+
+// await DataStore.save(
+//   new Users({
+//   "post": 123.45
+// })
+// );
 
 const DATA = [
   {
