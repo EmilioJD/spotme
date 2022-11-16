@@ -1,6 +1,6 @@
 {
-  "AppSyncApiName": "SpotMe",
+  "AppSyncApiName": "spotmetesting",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2022-10-26T03:35:22.396Z"
+  "AuthModeLastUpdated": "2022-11-14T03:40:27.944Z"
 }
