@@ -25,5 +25,26 @@
         "spotmetesting": {}
       }
     }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-spotmetesting-dev-201221-authRole",
+      "UnauthRoleArn": "arn:aws:iam::170079481721:role/amplify-spotmetesting-dev-201221-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::170079481721:role/amplify-spotmetesting-dev-201221-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-spotmetesting-dev-201221-deployment",
+      "UnauthRoleName": "amplify-spotmetesting-dev-201221-unauthRole",
+      "StackName": "amplify-spotmetesting-dev-201221",
+      "StackId": "arn:aws:cloudformation:us-east-1:170079481721:stack/amplify-spotmetesting-dev-201221/c083a940-654b-11ed-b042-12aa38b05a9b",
+      "AmplifyAppId": "d2izm9ei30bqrz"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2izm9ei30bqrz",
+          "type": "manual"
+        }
+      }
+    }
   }
 }
