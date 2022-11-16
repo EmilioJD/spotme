@@ -47,6 +47,9 @@
       },
       "api": {
         "spotmetesting": {}
+      },
+      "auth": {
+        "spotmetesting": {}
       }
     }
   }

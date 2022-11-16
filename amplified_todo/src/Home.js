@@ -11,10 +11,71 @@ import {
 } from 'react-native';
 import { DataStore } from 'aws-amplify';
 import { Todo } from './models';
+import { Amplify, Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
+
+let myname = '';
+
+const SignIn = ({ modalVisible, setModalVisible }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  async function signIn() {
+    console.log("BANANA");
+    try {
+        const user = await Auth.signIn(username, password);
+        const displayName = user.challengeParam.userAttributes.name;
+        myname = displayName;
+        console.log(displayName);
+        setModalVisible(false);
+    } catch (error) {
+        console.log('error signing in', error);
+    }
+  }
+
+  function closeModal() {
+    setModalVisible(false);
+  }
+
+  return (
+    <Modal
+      animationType="fade"
+      onRequestClose={closeModal}
+      transparent
+      visible={modalVisible}
+    >
+      <View style={styles.modalContainer}>
+        <View style={styles.modalInnerContainer}>
+          <Pressable onPress={closeModal} style={styles.modalDismissButton}>
+            <Text style={styles.modalDismissText}>X</Text>
+          </Pressable>
+          <TextInput
+            onChangeText={setUsername}
+            placeholder="Username"
+            style={styles.modalInput}
+          />
+          <TextInput
+            onChangeText={setPassword}
+            placeholder="Password"
+            style={styles.modalInput}
+          />
+          <Pressable onPress={signIn} style={styles.buttonContainer}>
+            <Text style={styles.buttonText}>Sign-In</Text>
+          </Pressable>
+        </View>
+      </View>
+    </Modal>
+  );
+};
 
 const Header = () => (
   <View style={styles.headerContainer}>
     <Text style={styles.headerTitle}>SpotMe</Text>
+    {myname &&
+    <Text style={styles.subheadingTitle}>Welcome, {myname}</Text>
+    }
   </View>
 );
 
@@ -145,10 +206,14 @@ const Home = () => {
         }}
         style={[styles.buttonContainer, styles.floatingButton]}
       >
-        <Text style={styles.buttonText}>+ Add Comment</Text>
+        <Text style={styles.buttonText}>Sign In</Text>
       </Pressable>
+      <SignIn
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+      />
 
-      <Pressable
+      {/* <Pressable
         onPress={() => {
           setModalVisible(true);
         }}
@@ -159,7 +224,7 @@ const Home = () => {
       <AddTodoModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
-      />
+      /> */}
     </>
   );
 };
@@ -176,6 +241,13 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: '600',
     paddingVertical: 16,
+    paddingLeft: 20,
+    textAlign: 'left',
+  },
+  subheadingTitle: {
+    color: 'grey',
+    fontSize: 20,
+    fontWeight: '400',
     paddingLeft: 20,
     textAlign: 'left',
   },
