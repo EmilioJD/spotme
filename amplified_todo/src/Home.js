@@ -14,7 +14,7 @@ import { Todo } from './models';
 
 const Header = () => (
   <View style={styles.headerContainer}>
-    <Text style={styles.headerTitle}>My Todo List</Text>
+    <Text style={styles.headerTitle}>SpotMe</Text>
   </View>
 );
 
@@ -56,7 +56,7 @@ const AddTodoModal = ({ modalVisible, setModalVisible }) => {
             style={styles.modalInput}
           />
           <Pressable onPress={addTodo} style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>Save Todo</Text>
+            <Text style={styles.buttonText}>Save Toooodo</Text>
           </Pressable>
         </View>
       </View>
@@ -138,6 +138,16 @@ const Home = () => {
     <>
       <Header />
       <TodoList />
+      
+      <Pressable
+        onPress={() => {
+          setModalVisible(true);
+        }}
+        style={[styles.buttonContainer, styles.floatingButton]}
+      >
+        <Text style={styles.buttonText}>+ Add Comment</Text>
+      </Pressable>
+
       <Pressable
         onPress={() => {
           setModalVisible(true);
@@ -156,15 +166,18 @@ const Home = () => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    backgroundColor: '#4696ec',
+    backgroundColor: 'white',
     paddingTop: Platform.OS === 'ios' ? 44 : 0,
+    borderBottomWidth: 1,
+    borderBottomColor: 'grey',
   },
   headerTitle: {
-    color: '#fff',
-    fontSize: 20,
+    color: 'black',
+    fontSize: 30,
     fontWeight: '600',
     paddingVertical: 16,
-    textAlign: 'center',
+    paddingLeft: 20,
+    textAlign: 'left',
   },
   todoContainer: {
     alignItems: 'center',
@@ -200,18 +213,19 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   buttonText: {
-    color: '#fff',
+    color: 'black',
     fontWeight: '600',
     padding: 16,
   },
   buttonContainer: {
     alignSelf: 'center',
-    backgroundColor: '#4696ec',
+    backgroundColor: '#90C975',
     borderRadius: 99,
     paddingHorizontal: 8,
   },
   floatingButton: {
-    position: 'absolute',
+    position: 'relative',
+    marginBottom: 20,
     bottom: 44,
     elevation: 6,
     shadowOffset: {

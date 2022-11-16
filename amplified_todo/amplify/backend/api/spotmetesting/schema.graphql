@@ -5,3 +5,8 @@ type Todo @model @auth(rules: [{allow: public}]) {
   isComplete: Boolean!
 }
  
+type Comment @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  description: String
+}

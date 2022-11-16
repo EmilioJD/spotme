@@ -44,6 +44,9 @@
           "appId": "d2izm9ei30bqrz",
           "type": "manual"
         }
+      },
+      "api": {
+        "spotmetesting": {}
       }
     }
   }
